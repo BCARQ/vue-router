@@ -1,0 +1,25 @@
+<!--命名路由-->
+<div id="mm">
+	<router-link :to={name:"mm",params:{userID:gg}}>点我没错</router-link>
+	
+	<router-view></router-view>
+</div>
+<script type="text/javascript">
+	var mm={
+		template:'<div>我是好人明年工资翻倍再翻倍{{$route.params.userID}}</div>'
+	}
+	
+	var router=new VueRouter({
+		routes:[
+		{path:"/mm/:userID",name:"mm",component:mm}
+		]
+	})
+	new Vue({
+		el:"#mm",
+		data:{
+			gg:"tt"
+		},
+		router,
+		
+	})
+</script>
